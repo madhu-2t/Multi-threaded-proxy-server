@@ -240,7 +240,7 @@ void* thread_fn(void* socketNew)
 	sem_getvalue(&seamaphore,&p);
 	printf("semaphore value:%d\n",p);
     int* t= (int*)(socketNew);
-	int socket=*t;           // Socket is socket descriptor of the connected Client
+	int socket=*t;               // Socket is socket descriptor of the connected Client
 	int bytes_send_client,len;	  // Bytes Transferred
 
 	
@@ -276,7 +276,7 @@ void* thread_fn(void* socketNew)
 	
 	//checking for the request in cache 
 	struct cache_element* temp = find(tempReq);
-
+	printf("Find is being called\n");
 	if( temp != NULL){
         //request found in cache, so sending the response to client from proxy's cache
 		int size=temp->len/sizeof(char);
